@@ -14,7 +14,6 @@ gem "database_cleaner-active_record"
 gem "factory_bot"
 gem "rspec", "~> 3.0"
 gem "rspec-rails"
-gem "sqlite3", "~> 1.4"
 
 # Code quality
 gem "rubocop", "~> 1.21"
@@ -23,3 +22,6 @@ gem "rubocop-rspec"
 # Rails versions for testing (CI matrix)
 rails_version = ENV.fetch("RAILS_VERSION", "7.2")
 gem "rails", "~> #{rails_version}.0"
+
+# Rails 7.2+ requires sqlite3 >= 2.1
+gem "sqlite3", ">= 2.1"
