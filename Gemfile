@@ -21,4 +21,5 @@ gem "rubocop", "~> 1.21"
 gem "rubocop-rspec"
 
 # Rails versions for testing (CI matrix)
-gem "rails", "~> #{ENV.fetch("RAILS_VERSION", "7.1")}.0" if ENV["RAILS_VERSION"]
+rails_version = ENV.fetch("RAILS_VERSION", "7.2")
+gem "rails", "~> #{rails_version}.0"

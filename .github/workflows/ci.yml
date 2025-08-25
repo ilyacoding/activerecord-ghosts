@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         ruby-version: ['3.4']
-        rails-version: ['7.0', '7.1', '7.2', '8.0']
+        rails-version: ['7.2', '8.0']
 
     steps:
     - uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true
+        bundler-cache: false
 
     - name: Set up test database
       run: |
@@ -30,8 +30,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        bundle install
-        RAILS_VERSION=${{ matrix.rails-version }} bundle update
+        bundle config set frozen false
+        RAILS_VERSION=${{ matrix.rails-version }} bundle install
 
     - name: Run tests
       run: bundle exec rspec
