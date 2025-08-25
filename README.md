@@ -1,18 +1,13 @@
 # ActiveRecord::Ghosts 👻
 
 "Virtual rows" for ActiveRecord models.
-Fill in the gaps in your sequencFor best performance, ensure the ghosted column (e.g. `:level`) has an **index**.
-If it doesn't, you'll see a warning:
-
-```
-[activerecord-ghosts] ⚠️ Column :level on progress_levels has no leading index. Ghost queries may be slow.
-``` work with **ghost records** that behave like AR objects but aren’t persisted.
+Fill in the gaps in your sequences and work with **ghost records** that behave like AR objects but aren't persisted.
 
 ---
 
 ## ✨ Features
 
-- Define a sequence column (like `number`).
+- Define a sequence column (like `level`, `number`).
 - Query with a range and get **real + ghost records**.
 - Chain with `where` / scopes.
 - Works with `Enumerator` for infinite series.
@@ -30,7 +25,7 @@ Add to your Gemfile:
 
 ```ruby
 gem "activerecord-ghosts"
-````
+```
 
 and run:
 
@@ -106,11 +101,11 @@ Records are lazily loaded batch by batch.
 
 ## ⚠️ Performance note
 
-For best performance, ensure the ghosted column (e.g. `:number`) has an **index**.
-If it doesn’t, you’ll see a warning:
+For best performance, ensure the ghosted column (e.g. `:level`) has an **index**.
+If it doesn't, you'll see a warning:
 
 ```
-[activerecord-ghosts] ⚠️ Column :number on invoices has no leading index. Ghost queries may be slow.
+[activerecord-ghosts] ⚠️ Column :level on progress_levels has no leading index. Ghost queries may be slow.
 ```
 
 Composite indexes are fine if your ghost column is the **leading** column.
@@ -144,8 +139,6 @@ This gem uses **RubyGems.org Trusted Publishing** for secure, automated releases
 1. Update version in `lib/activerecord/ghosts/version.rb`
 2. Commit and create tag: `git tag v0.1.1 && git push --tags`
 3. GitHub Actions automatically publishes to RubyGems.org
-
-See [TRUSTED_PUBLISHING.md](TRUSTED_PUBLISHING.md) for setup details.
 
 ### Running Tests
 
