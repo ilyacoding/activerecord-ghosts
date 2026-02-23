@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['3.4']
+        ruby-version: ['3.4', '4.0']
         rails-version: ['7.2', '8.0']
 
     steps:
