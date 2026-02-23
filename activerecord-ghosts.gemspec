@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name = "activerecord-ghosts"
   spec.version = ActiveRecord::Ghosts::VERSION
   spec.authors = ["Ilya Kovalenko"]
-  spec.email = ["a@fromilya.com"]
+  spec.email = ["ilya@ilyakovalenko.com"]
 
   spec.summary = "Virtual rows for ActiveRecord models - fill in the gaps in your sequences with ghost records"
   spec.description = "ActiveRecord::Ghosts allows you to define a sequence column and query with ranges to get real + ghost records. Ghost records behave like AR objects but aren't persisted, perfect for filling gaps in sequences like levels, numbers, etc."
