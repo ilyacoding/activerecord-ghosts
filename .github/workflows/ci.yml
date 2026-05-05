@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         ruby-version: ['3.4', '4.0']
-        rails-version: ['7.2', '8.0']
+        rails-version: ['7.2', '8.0', '8.1']
 
     steps:
     - uses: actions/checkout@v4
